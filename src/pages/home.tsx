@@ -1,10 +1,10 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import './home.scss';
 import headerBg from '../images/header.png';
 import {Chart1} from '../components/chart-1';
 import {Chart2} from '../components/chart-2';
+import {Chart3} from '../components/chart-3';
 
-const px = (n) => n / 2420 * (window as any).pageWidth;
 export const Home = () => {
     const year = new Date().getFullYear();
     return (
@@ -15,7 +15,9 @@ export const Home = () => {
                     <Chart1/>
                     <Chart2/>
                 </section>
-                <section className="section2"></section>
+                <section className="section2">
+                    <Chart3/>
+                </section>
                 <section className="section3"></section>
                 <section className="section4"></section>
                 <section className="section5"></section>
