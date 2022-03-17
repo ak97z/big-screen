@@ -6,6 +6,7 @@ import {Chart2} from '../components/chart-2';
 
 const px = (n) => n / 2420 * (window as any).pageWidth;
 export const Home = () => {
+    const year = new Date().getFullYear();
     return (
         <div className="home">
             <header style={{backgroundImage: `url(${headerBg})`}}/>
@@ -19,6 +20,7 @@ export const Home = () => {
                 <section className="section4"></section>
                 <section className="section5"></section>
             </main>
+            <footer>&copy; 饥人谷 2020-{year}</footer>
         </div>
     );
 };
