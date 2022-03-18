@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-
+import {px} from '../shared/px';
 export const Chart8 = () => {
     const divRef = useRef(null);
     useEffect(() => {
