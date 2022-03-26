@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "upload": "cd dist;git init; git remote remove origin; git remote add origin git@github.com:ak97z/big-screen.git; git add . ; git commit -am \"modify\";git push -f origin master && exit 0"
   },
   "dependencies": {
     "echarts": "5.0.2",
@@ -20,6 +21,7 @@
     "@types/react-router-dom": "5.1.7",
     "@vitejs/plugin-react-refresh": "1.3.2",
     "sass": "1.32.8",
+    "typescript": "^4.6.3",
     "vite": "2.1.5"
   }
 }
