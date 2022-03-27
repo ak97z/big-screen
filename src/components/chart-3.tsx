@@ -24,7 +24,7 @@ export const Chart3 = () => {
             },
             toolbox: {
                 feature: {
-                    saveAsImage: {}
+                    // saveAsImage: {}
                 }
             },
             xAxis: {

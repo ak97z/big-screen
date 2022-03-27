@@ -9,6 +9,13 @@ export const Chart9 = () => {
     useEffect(() => {
         var myChart = echarts.init(divRef.current);
         myChart.setOption(createEchartsOptions({
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                top:'1%',
+                containLabel: true
+            },
             color: '#F7A110',
             xAxis: {
                 type: 'category',
