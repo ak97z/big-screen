@@ -5,7 +5,25 @@ import {px} from '../shared/px';
 
 export const Chart7 = () => {
     const divRef = useRef(null);
+    const data = [
+        {value: 0.2, name: '女'},
+        {value: 0.8, name: '男'},
+    ];
     useEffect(() => {
+        setInterval(() => {
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * max);
+            }
+           let w=getRandomInt(100);
+            let m = 100-w;
+            const newData = [
+                {name: '男', value: m},
+                {name: '女',  value: w},
+            ];
+            x(newData);
+        }, 1000);
+
+        const x = (data) => {
         var myChart = echarts.init(divRef.current);
         myChart.setOption(createEchartsOptions({
             xAxis:{show:false},
@@ -17,24 +35,22 @@ export const Chart7 = () => {
                 {
                     type:'pie',
                     radius: ['60%', '80%'],
-                    data:[
-                        {value: 0.2, name: '女'},
-                        {value: 0.8, name: '男'},
-                    ],
+                    data:data.map(i => i),
                     label: {
                         show: true, position: 'inside', textStyle: {color: 'white', fontSize: px(20)},
                         formatter(options) {
-                            return options.value * 100 + '%';
+                            return options.value  + '%';
                         }
                     },
                     labelLine:{show:false},
                     itemStyle: {
-                        borderColor: '#0F113A',
+                            borderColor: '#0F113A',
                         borderWidth: px(4)
                     },
                 }
             ],
         }));
+        }
     }, []);
 
     return (
