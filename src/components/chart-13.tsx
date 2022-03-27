@@ -17,8 +17,31 @@ export const Chart13 = () => {
         {value: 0.08, name: '天水路'},
     ];
     useEffect(() => {
+        setInterval(() => {
+            const newData = [
+                {name: '东岗路', value: Math.random()},
+                {name: '段家滩',  value: Math.random()},
+                {name: '雁北',  value: Math.random()},
+                {name: '五泉山',  value: Math.random()},
+                {name: '中山路',  value: Math.random()},
+                {name: '庆阳路',  value: Math.random()},
+                {name: '武都路',  value: Math.random()},
+                {name: '酒泉路',  value: Math.random()},
+                {name: '天水路',  value: Math.random()},
+            ];
+            x(newData);
+        }, 1000);
+        const x = (data) => {
         var myChart = echarts.init(divRef.current);
+
         myChart.setOption(createEchartsOptions({
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                top:'1%',
+                containLabel: true
+            },
             xAxis: {
                 data: data.map(i => i.name),
                 axisTick: {show: false},
@@ -44,11 +67,13 @@ export const Chart13 = () => {
                     show: true,
                     lineStyle: {color: '#083B70'}
                 },
-                axisLabel: {
-                    formatter(value) {
-                        return (value * 100).toFixed(0) + '%';
-                    }
-                }
+                // axisLabel: {
+                //     formatter(value) {
+                //         return (value * 100).toFixed(0) + '%';
+                //     }
+                // }
+                axisLabel: {show: false}
+
             },
             series: [{
                 type: 'bar',
@@ -62,6 +87,7 @@ export const Chart13 = () => {
                 }]),
             }]
         }));
+        }
     }, []);
 
     return (

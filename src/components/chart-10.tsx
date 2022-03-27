@@ -24,8 +24,6 @@ export const Chart10 = () => {
             x(newData);
         }, 1000);
         const x = (data) => {
-
-
         var myChart = echarts.init(divRef.current);
         myChart.setOption(createEchartsOptions({
             grid: {
