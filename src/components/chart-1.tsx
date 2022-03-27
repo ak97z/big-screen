@@ -8,7 +8,7 @@ export const Chart1 = () => {
     const myChart = useRef(null);
     const data = [
         // 10, 20, 36, 41, 15, 26, 37, 18, 29
-        {name: '兰州', number: 1},
+        {name: '兰州兰州', number: 1},
         {name: '兰州', number: 1},
         {name: '兰州', number: 1},
         {name: '兰州', number: 1},
@@ -22,7 +22,7 @@ export const Chart1 = () => {
     useEffect(() => {
         setInterval(() => {
             const newData = [
-                {name: '兰州', number: Math.random(),},
+                {name: '兰州兰州', number: Math.random(),},
                 {name: '兰州', number: Math.random(),},
                 {name: '兰州', number: Math.random(),},
                 {name: '兰州', number: Math.random(),},
@@ -36,18 +36,35 @@ export const Chart1 = () => {
         }, 1000);
         const x = (data) => {
             myChart.current.setOption(createEchartsOptions({
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    top:'1%',
+                    containLabel: true
+                },
                 xAxis: {
                     type: 'category',
                     boundaryGap: [0, 0.01],
                     axisTick: {show: false},
                     splitLine: {show: false},
                     data: data.map(i => i.name),
+                    axisLabel: {
+                        formatter(val) {
+                            if (val.length > 2) {
+                                const array = val.split('');
+                                array.splice(2, 0, '\n');
+                                return array.join('');
+                            } else {
+                                return val;
+                            }
+                        },
+                    }
                 },
                 yAxis: {
-                    splitLine: false,
+                    splitLine: {show:false},
                     type: 'value',
-
-
+                    axisLabel: {show: false}
                 },
                 series: [{
                     name: 'number',

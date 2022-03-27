@@ -37,6 +37,13 @@ export const Chart2 = () => {
     }, []);
     const x = (data) => {
         myChart.current.setOption(createEchartsOptions({
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                top:'1%',
+                containLabel: true
+            },
             xAxis: {
                 type: 'value',
                 boundaryGap: [0, 0.01],
