@@ -17,7 +17,7 @@ export const Chart8 = () => {
             function getRandomInt(max) {
                 return Math.floor(Math.random() * max);
             }
-            let A=getRandomInt(40);
+            let A=getRandomInt(20);
             let B = getRandomInt(100-A);
             let C = getRandomInt(100-A-B);
             let D = getRandomInt(100-A-B-C);
