@@ -22,7 +22,7 @@ export const Chart8 = () => {
             let C = getRandomInt(100-A-B);
             let D = getRandomInt(100-A-B-C);
             let E = 100-A-B-C-D;
-            console.log(A + B + C + D + E);
+            // console.log(A + B + C + D + E);
 
             const newData = [
                 {value: A, name: '10-20'},
