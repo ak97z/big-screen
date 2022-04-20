@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "upload": "cd dist;git init; git remote remove origin; git remote add origin git@github.com:ak97z/big-screen.git; git add . ; git commit -am \"modify\";git push -f origin master && exit 0"
+    "upload": "cd dist;git init; git remote remove origin; git remote add origin git@github.com:ak97z/big-screen-website.git; git add . ; git commit -am \"modify\";git push -f origin master && exit 0"
   },
   "dependencies": {
     "echarts": "5.0.2",
